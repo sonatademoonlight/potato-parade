@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Potato Parade</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+  <body>
+  <h1>🍠 Potato Parade 🍠</h1>
+
+  <!-- Music toggle button -->
+  <button onclick="toggleMusic()" class="music-btn">🎵 Toggle Music</button>
+
+  <!-- ✅ Background music (Pixabay lofi) -->
+  <audio id="bgMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto" loop></audio>
+
+
+  <!-- Potato cards -->
+  <div class="potato-grid">
+    <div class="potato-card" onclick="showRecipe('fries')">
+      <h2>chips - not french fries</h2>
+      <p>🧂 crispy and not from france</p>
+    </div>
+
+    <div class="potato-card" onclick="showRecipe('mash')">
+      <h2>Mashed Potatoes</h2>
+      <p>🥣 Buttery and a lot of butter</p>
+    </div>
+
+    <div class="potato-card" onclick="showRecipe('baked')">
+      <h2>jacket Potato</h2>
+      <p>🔥 has to have beans and cheese</p>
+    </div>
+
+    <div class="potato-card" onclick="showRecipe('wedges')">
+      <h2>Potato Wedges</h2>
+      <p>🧄 lowkey same thing as chips</p>
+    </div>
+  </div>
+
+  <!-- Recipe popup -->
+  <div class="recipe-popup" id="recipe">
+    <div class="recipe-content">
+      <span class="close-btn" onclick="closeRecipe()">❌</span>
+      <h2 id="recipe-title"></h2>
+      <p id="recipe-text"></p>
+    </div>
+  </div>
+<audio id="popSound" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
+
+  
+</body>

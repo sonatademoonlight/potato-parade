@@ -1,0 +1,42 @@
+
+function showRecipe(type) {
+  document.getElementById("popSound").play();
+
+  const title = document.getElementById("recipe-title");
+  const text = document.getElementById("recipe-text");
+  const popup = document.getElementById("recipe");
+
+  const recipes = {
+    fries: "cut your potaotes and soak it in water. then fry in a lot of oil and season with a lot of salt and enjoy!!",
+    mash: "boil your potatoes and mash them. then add a lot of butter and enjoy before you get diabetes from the butter!",
+    baked: "wrap your potato and bake until soft but dont burn it . then add cheese and beans and cheese and beans only.",
+    wedges: "slice your potato into wedges and ✨season✨ them and bake and enjoy!"
+  };
+
+  title.innerText = type.charAt(0).toUpperCase() + type.slice(1);
+  text.innerText = recipes[type];
+  popup.style.display = "flex";
+}
+
+// Close the popup
+function closeRecipe() {
+  document.getElementById("recipe").style.display = "none";
+}
+
+// Play or pause background music
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+// Try to autoplay music on page load
+window.addEventListener('load', () => {
+  const music = document.getElementById("bgMusic");
+  music.play().catch(() => {
+    console.log("Autoplay blocked by browser 😅");
+  });
+});
